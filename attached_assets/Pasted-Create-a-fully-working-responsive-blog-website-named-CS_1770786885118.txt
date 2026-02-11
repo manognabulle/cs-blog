@@ -1,0 +1,83 @@
+Create a fully working, responsive blog website named “CS Blog”.
+
+Theme:
+The blog is about Computer Science, Tech Life, Coding, Study Tips, Programming Tutorials, Productivity for students, and developer lifestyle.
+
+Tech Stack:
+Use HTML, CSS, and JavaScript only (no frameworks).
+Make it clean, modern, responsive, and professional.
+
+Design Requirements:
+- Modern minimal UI
+- Dark + Light mode toggle
+- Clean typography (Google Fonts)
+- Smooth hover animations
+- Card-style blog layout
+- Soft shadows and rounded corners
+- Fully responsive for mobile, tablet, and desktop
+- Sticky navigation bar
+- Attractive hero section
+- Footer with social links
+
+Pages Required:
+1. Home Page
+   - Hero section with blog name “CS Blog”
+   - Short tagline: “Tech • Study • Code • Build”
+   - Featured posts section
+   - Recent blog posts grid
+   - Category filter buttons (Tech, Study, Coding, Productivity)
+
+2. Blog Post Page
+   - Dynamic blog post layout
+   - Title, author, date
+   - Featured image
+   - Proper typography for article content
+   - Code block styling
+   - Share buttons
+   - Comment section UI (static is fine)
+
+3. About Page
+   - Personal introduction section
+   - Skills section
+   - Mission of the blog
+
+4. Contact Page
+   - Contact form with validation (JavaScript)
+   - Name, Email, Message fields
+   - Success message after submission
+
+Features:
+- Working search bar (filter blog posts using JavaScript)
+- Category filtering system
+- Dark/Light mode toggle stored in localStorage
+- Responsive mobile menu toggle
+- Smooth scrolling
+- Scroll-to-top button
+- Clean structured CSS
+- Organized file structure:
+   - index.html
+   - blog.html
+   - about.html
+   - contact.html
+   - style.css
+   - script.js
+
+Content:
+Add 6–8 sample blog posts related to:
+- Learning DSA
+- Productivity for coders
+- How to avoid burnout
+- Best programming languages in 2026
+- Study routine for CS students
+- Building projects as a beginner
+
+Make everything look realistic and professional.
+
+Important:
+- Write clean, well-structured code.
+- Separate CSS and JavaScript properly.
+- Comment the code.
+- Ensure all links work properly.
+- Make sure it runs by just opening index.html in browser.
+
+Deliver full working code.
