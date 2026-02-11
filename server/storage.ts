@@ -7,10 +7,13 @@ export interface IStorage {
   getPosts(): Promise<Post[]>;
   getPostBySlug(slug: string): Promise<Post | undefined>;
   createPost(post: InsertPost): Promise<Post>;
-  
+  deletePost(id: number): Promise<void>;
+  updatePost(id: number, post: Partial<InsertPost>): Promise<Post>;
+
   // Messages
   createMessage(message: InsertMessage): Promise<Message>;
 }
+
 
 export class DatabaseStorage implements IStorage {
   async getPosts(): Promise<Post[]> {
@@ -31,6 +34,20 @@ export class DatabaseStorage implements IStorage {
     const [newMessage] = await db.insert(messages).values(message).returning();
     return newMessage;
   }
+  async deletePost(id: number): Promise<void> {
+  await db.delete(posts).where(eq(posts.id, id));
+}
+
+async updatePost(id: number, post: Partial<InsertPost>): Promise<Post> {
+  const [updated] = await db
+    .update(posts)
+    .set(post)
+    .where(eq(posts.id, id))
+    .returning();
+
+  return updated;
+}
+
 }
 
 export const storage = new DatabaseStorage();

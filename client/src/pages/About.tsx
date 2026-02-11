@@ -24,12 +24,12 @@ export default function About() {
           <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 ring-4 ring-primary/20">
             {/* Unsplash portrait photo */}
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+              src="https://images.rawpixel.com/image_png_social_portrait/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3Jhd3BpeGVsX29mZmljZV8zMl9pbGx1c3RyYXRpb25fYW5pbWUtc3R5bGVfYV9mZW1hbGVfc3R1ZGVudF9ob19lNWU4MDBmYS0xNjZhLTRhMjAtOWIxOC1lNGNkMmEyODFlMmFfMS5wbmc.png" 
               alt="Profile" 
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">Hi, I'm a CS Student</h1>
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">Hi, I'm a Student</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Passionate about building software that matters. Sharing my journey in tech, 
             coding tips, and study strategies.
@@ -88,25 +88,6 @@ export default function About() {
           </div>
         </section>
 
-        <section>
-          <h2 className="font-display text-3xl font-bold mb-8">Tech Stack & Skills</h2>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <Badge variant="secondary" className="px-4 py-2 text-base">
-                  <CheckCircle2 className="w-4 h-4 mr-2 text-primary" />
-                  {skill}
-                </Badge>
-              </motion.div>
-            ))}
-          </div>
-        </section>
       </main>
 
       <Footer />

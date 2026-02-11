@@ -55,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Email</h3>
-                  <p className="text-muted-foreground">hello@csblog.dev</p>
+                  <p className="text-muted-foreground">maddybro277@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -64,7 +64,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Location</h3>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Bengaluru,India</p>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} className="h-12 bg-muted/30" />
+                            <Input placeholder="Your Name" {...field} className="h-12 bg-muted/30" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -116,7 +116,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="john@example.com" {...field} className="h-12 bg-muted/30" />
+                            <Input placeholder="Name@example.com" {...field} className="h-12 bg-muted/30" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -131,7 +131,7 @@ export default function Contact() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Tell me about your project..." 
+                              placeholder="Tell me about you..." 
                               className="min-h-[150px] bg-muted/30 resize-none" 
                               {...field} 
                             />

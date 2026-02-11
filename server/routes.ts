@@ -8,6 +8,40 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  const requireAdmin = (req: any, res: any, next: any) => {
+  if (!(req.session as any)?.isAdmin) {
+    return res.status(403).json({ error: "Unauthorized" });
+  }
+  next();
+};
+
+  // LOGIN
+app.post("/api/login", (req, res) => {
+  const { password } = req.body;
+
+  if (password === "admin123") {
+    (req.session as any).isAdmin = true;
+    return res.json({ success: true });
+  }
+
+  res.status(401).json({ error: "Invalid password" });
+});
+
+// LOGOUT
+app.post("/api/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.json({ success: true });
+  });
+});
+
+// CHECK AUTH
+app.get("/api/check-auth", (req, res) => {
+  if ((req.session as any).isAdmin) {
+    return res.json({ authenticated: true });
+  }
+  res.json({ authenticated: false });
+});
+
   
   // Get all posts
   app.get(api.posts.list.path, async (req, res) => {
@@ -23,7 +57,28 @@ export async function registerRoutes(
     }
     res.json(post);
   });
+    // Create Post
+app.post("/api/posts", requireAdmin, async (req, res) => {
+  const post = await storage.createPost(req.body);
+  res.json(post);
+});
 
+// Update Post
+app.put("/api/posts/:id", requireAdmin, async (req, res) => {
+
+  const updated = await storage.updatePost(
+    Number(req.params.id),
+    req.body
+  );
+  res.json(updated);
+});
+
+// Delete Post
+app.delete("/api/posts/:id", requireAdmin, async (req, res) => {
+
+  await storage.deletePost(Number(req.params.id));
+  res.json({ success: true });
+});
   // Create message (Contact form)
   app.post(api.messages.create.path, async (req, res) => {
     try {
@@ -239,3 +294,5 @@ Just start building. It doesn't have to be perfect.
     console.log("Database seeded with sample posts");
   }
 }
+
+

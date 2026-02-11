@@ -1,9 +1,21 @@
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import session from "express-session";
+
+console.log(process.env.DATABASE_URL);
+
 
 const app = express();
+app.use(
+  session({
+    secret: "supersecretkey",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 const httpServer = createServer(app);
 
 declare module "http" {
